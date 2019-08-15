@@ -1,0 +1,699 @@
+.page-inputs{
+  width: 100%;
+  padding: 50px 0;
+  align-self: flex-start;
+
+  &__inner{
+    width: 100%;
+    padding: 50px 0;
+
+    @media (max-width: $width-sm){
+      padding: 20px 0;
+    }
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  //.title{
+  //  text-align: center;
+  //}
+
+  .form{
+    width: 100%;
+    max-width: 382px;
+    margin: 15px auto 0 auto;
+  }
+
+  .input{
+    margin: 35px 0;
+  }
+
+  .btn{
+    margin: 20px auto 0 auto;
+  }
+
+  .bottom-text{
+    @extend .text;
+    margin: 50px auto 0 auto;
+  }
+
+  .form-ctrl{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+
+    .input,
+    .btn{
+      width: 49%;
+      margin: 0;
+    }
+  }
+
+  .form-container{
+    .input,
+    .form-group{
+      &:nth-of-type(1){
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .form-group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 35px 0;
+    width: 100%;
+
+    .input{
+      margin: 0;
+    }
+
+    &_2{
+      @extend .form-group;
+
+      .input{
+        width: 49%;
+      }
+    }
+
+    &_3{
+      @extend .form-group;
+
+      .input{
+        width: 32%;
+      }
+    }
+  }
+
+  .plans{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin: 40px auto 20px auto;
+    width: 100%;
+    max-width: 684px;
+
+    @media (max-width: $width-sm){
+      margin: 20px 0;
+    }
+
+    &__item{
+      width: 33.33%;
+      padding: 0 8px;
+
+      @media (max-width: $width-sm){
+        width: 100%;
+        margin: 10px auto;
+      }
+
+      &-container{
+        border: 1px solid $light-gray;
+        padding: 15px;
+        height: 100%;
+        transition: 0.3s;
+        cursor: pointer;
+
+        &.active,
+        &:hover{
+          border-color: $black;
+        }
+      }
+
+      &-name{
+        color: $black;
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 16px;
+      }
+
+      &-price{
+        color: $black;
+        font-size: 17px;
+        font-weight: 400;
+        text-align: center;
+
+        span{
+          color: $gray;
+          font-size: 9px;
+          font-weight: 400;
+          line-height: 1;
+          display: block;
+        }
+      }
+
+      &-list{
+        margin: 22px 0 0 0;
+
+        li{
+          color: $black;
+          font-size: 12px;
+          font-weight: 600;
+          line-height: 1;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin: 15px 0;
+
+          span{
+            color: $gray;
+            font-size: 12px;
+            font-weight: 400;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+
+  .managers{
+    width: 100%;
+    max-width: 550px;
+    margin: 62px auto 0 auto;
+
+    &__item{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+
+      @media (max-width: $width-fb){
+        display: block;
+        margin-bottom: 20px;
+      }
+
+      &-left{
+        //display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 8px 31px;
+        position: relative;
+        z-index: 1;
+      }
+
+      &-right{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        @media (max-width: $width-fb){
+          justify-content: flex-start;
+        }
+      }
+
+      &-number{
+        position: absolute;
+        color: $black;
+        font-size: 14px;
+        font-weight: 400;
+        left: 5px;
+        top: 15px;
+      }
+
+      .btn{
+        margin: 0 0 0 10px;
+        width: 130px;
+
+        @media (max-width: $width-fb){
+          margin: 0 10px 0 0;
+        }
+      }
+    }
+  }
+
+  .btn-container{
+    display: flex;
+    justify-content: center;
+
+    .btn{
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+
+  .navigation{
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    z-index: 2;
+    width: 100%;
+    max-width: 220px;
+
+    $width-tb: 860px;
+
+    @media (max-width: 960px){
+      max-width: 180px;
+    }
+
+    @media (max-width: $width-tb){
+      position: relative;
+      top: 0;
+      left: 0;
+      max-width: 100%;
+    }
+
+    &:before{
+      content: '';
+      width: 1px;
+      height: calc(100% - 54px);
+      left: 0;
+      top: 26px;
+      position: absolute;
+      z-index: 1;
+      background-color: $gray;
+
+      @media (max-width: $width-tb){
+        height: calc(100% - 14px);
+        top: 6px;
+      }
+
+      @media (max-width: $width-tb){
+        display: none;
+      }
+    }
+
+    &__text{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block;
+      margin-right: 4px;
+    }
+
+    li{
+      color: $gray;
+      font-size: 12px;
+      font-weight: 400;
+      cursor: pointer;
+      transition: $tr-default;
+      margin: 20px 0;
+      position: relative;
+      z-index: 1;
+      min-height: 10px;
+      padding-left: 40px;
+      padding-right: 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      @media (max-width: $width-tb){
+        padding-left: 0;
+        margin: 0 20px 5px 0;
+        display: inline-flex;
+      }
+
+      &:before{
+        content: '';
+        width: 22px;
+        height: 1px;
+        background-color: $gray;
+        position: absolute;
+        top: 6px;
+        left: 0;
+        z-index: 1;
+        transition: 0.3s;
+        opacity: 0;
+
+        @media (max-width: $width-tb){
+          display: none;
+        }
+      }
+
+      &.active,
+      &:hover{
+        color: $black;
+
+        &:before{
+          opacity: 1;
+        }
+      }
+    }
+
+    &-delete{
+      width: 8px;
+      height: 8px;
+      padding: 0;
+      position: absolute;
+      top: 3px;
+      right: 0;
+      z-index: 10;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url("../images/icons/icon-cross.svg");
+      background-size: contain;
+      transition: $tr-default;
+    }
+
+    .navigation__add{
+      position: absolute;
+      top: calc(100% + 10px);
+      color: $black;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 0;
+      margin: 0;
+
+      @media (max-width: $width-tb){
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        display: block;
+        padding: 10px 0;
+      }
+
+      &:before,
+      &:after{
+        display: none;
+      }
+    }
+  }
+
+  .rooms{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: -20px;
+    margin-left: -1px;
+    margin-right: -1px;
+
+    &__item{
+      width: calc(33.33% - 2px);
+      height: 20px;
+      padding: 0 10px;
+      background-color: $light-gray;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 2px 1px;
+
+      &-text{
+        width: calc(100% - 30px);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: $black;
+        font-size: 11px;
+        font-weight: 400;
+      }
+
+      &-btn{
+        width: 8px;
+        min-width: 8px;
+        height: 8px;
+        padding: 0;
+
+        img{
+          max-width: 100%;
+          max-height: 100%;
+          display: block;
+        }
+      }
+    }
+  }
+
+  .questions{
+    &__item{
+      margin: 15px 0;
+
+      &-name{
+        color: $black;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .input{
+        margin: 0;
+      }
+    }
+  }
+
+  .input_image{
+    margin: 20px auto 45px auto;
+  }
+
+  .service{
+    &__item{
+      position: relative;
+      z-index: 1;
+      border: 1px solid $light-gray;
+      padding: 10px 30px 10px 15px;
+      margin: 20px 0;
+
+      &-name{
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      &-price{
+        color: $gray;
+        font-size: 12px;
+        font-weight: 400;
+      }
+
+      &-name,
+      &-price{
+        input{
+          font-size: inherit;
+          color: inherit;
+          font-weight: inherit;
+          display: block;
+          width: 100%;
+        }
+      }
+
+      &-delete{
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        position: absolute;
+        top: calc(50% - 5px);
+        right: 15px;
+        z-index: 10;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("../images/icons/icon-cross.svg");
+        background-size: contain;
+      }
+    }
+  }
+
+  .service__history{
+    border: 1px solid $light-gray;
+    padding: 0 15px;
+
+    &-total{
+      color: $gray;
+      font-size: 12px;
+      font-weight: 400;
+      text-align: right;
+      padding: 0 0 15px 0;
+
+      span{
+        color: $black;
+        font-size: 14px;
+        font-weight: 600;
+        margin-right: 2px;
+      }
+    }
+
+    &-item{
+      padding: 10px 0;
+      border-top: 1px solid $light-gray;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &:nth-of-type(1){
+        border-top: none;
+      }
+
+      &__name{
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      &__status{
+        color: $gray;
+        font-size: 12px;
+        font-weight: 400;
+      }
+
+      &__price{
+        color: $gray;
+        font-size: 15px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .manuals,
+  .rules{
+    &__name{
+      position: relative;
+      z-index: 1;
+      padding-right: 20px;
+
+      input{
+        font-size: inherit;
+        font-weight: inherit;
+        width: 100%;
+        display: block;
+      }
+
+      &-delete{
+        width: 8px;
+        height: 8px;
+        padding: 0;
+        position: absolute;
+        top: 3px;
+        right: 0;
+        z-index: 10;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("../images/icons/icon-cross.svg");
+        background-size: contain;
+        transition: $tr-default;
+      }
+    }
+
+    &_empty{
+      padding: 50px 0;
+
+      &-text{
+        text-align: center;
+        color: $gray;
+        font-size: 18px;
+        font-weight: 400;
+      }
+    }
+
+    &__tab{
+      padding: 0 20px;
+      border: 1px solid $light-gray;
+      margin: 20px 0;
+      position: relative;
+      z-index: 1;
+
+      &-name{
+        cursor: pointer;
+        padding: 15px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $black;
+        font-size: 13px;
+        font-weight: 600;
+
+        img{
+          transition: $tr-default;
+          display: block;
+          margin: 0 0 0 auto;
+        }
+
+        &.active{
+          img{
+            transform: rotateX(180deg);
+          }
+        }
+      }
+
+      &-text{
+        @extend .text;
+        padding-bottom: 15px;
+      }
+
+      &-inner{
+        overflow: hidden;
+      }
+
+      &-delete{
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        position: absolute;
+        top: 19px;
+        right: -20px;
+        z-index: 10;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("../images/icons/icon-cross.svg");
+        background-size: contain;
+        opacity: 0.2;
+        transition: $tr-default;
+      }
+
+      &:hover{
+        .manuals__tab-delete,
+        .rules__tab-delete{
+          opacity: 1;
+        }
+      }
+    }
+
+    &__item{
+      position: relative;
+      z-index: 1;
+      border: 1px solid $light-gray;
+      padding: 10px 15px;
+      margin: 20px 0;
+
+      &-name{
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      &-text{
+        color: $gray;
+        font-size: 12px;
+        font-weight: 400;
+
+        textarea{
+          height: 50px;
+        }
+      }
+
+      &-name,
+      &-text{
+        textarea,
+        input{
+          font-size: inherit;
+          color: inherit;
+          font-weight: inherit;
+          display: block;
+          width: 100%;
+          resize: none;
+        }
+      }
+
+      &-delete{
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        position: absolute;
+        top: calc(50% - 5px);
+        right: 15px;
+        z-index: 10;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("../images/icons/icon-cross.svg");
+        background-size: contain;
+      }
+    }
+  }
+}

@@ -1,0 +1,135 @@
+.page-home{
+  padding: 40px 0 60px 0;
+  width: 100%;
+
+  .property{
+    &__list{
+      margin-top: 20px;
+
+      @media (max-width: ($width-lg - 20)){
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+    }
+
+    &__item{
+      padding: 15px 20px;
+      border: 1px solid $light-gray;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+
+      @media (max-width: ($width-lg - 20)){
+        width: calc(50% - 5px);
+        display: block;
+      }
+
+      @media (max-width: ($width-sm - 20)){
+        width: 100%;
+        padding: 10px;
+      }
+
+      &-head{
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        @media (max-width: ($width-lg - 20)){
+          width: 100%;
+        }
+
+        &__pic{
+          width: 112px;
+          min-width: 112px;
+          height: 85px;
+          object-fit: cover;
+          margin-right: 20px;
+        }
+
+        .subtitle{
+          img{
+            display: inline-block;
+            vertical-align: top;
+            margin: 3px 5px 0 0;
+          }
+        }
+
+        .text{
+          margin-top: 6px;
+        }
+      }
+
+      &-description{
+        width: 100%;
+        max-width: calc(100% - 610px);
+        padding: 0 25px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+
+        @media (max-width: ($width-lg - 20)){
+          max-width: 100%;
+          padding: 20px 0;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+        }
+
+        &__col{
+          padding: 0 20px;
+
+          @media (max-width: ($width-lg - 20)){
+            padding: 10px;
+          }
+        }
+
+        .title-mini_internal{
+          margin-bottom: 5px;
+        }
+      }
+
+      &-ctrl{
+        width: 285px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        @media (max-width: ($width-lg - 20)){
+          width: 100%;
+          max-width: 280px;
+        }
+
+        .btn{
+          width: 49%;
+
+          &:nth-of-type(2){
+            margin-left: 2%;
+          }
+        }
+      }
+
+      &-status{
+        width: 49%;
+        text-align: center;
+        color: $gray;
+        font-size: 13px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.empty-property{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .btn{
+    margin: 20px auto 0 auto;
+  }
+}

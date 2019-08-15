@@ -1,0 +1,127 @@
+.calendar{
+  padding: 10px 0 0 0;
+
+  &__ctrl{
+    padding: 20px 0;
+    display: flex;
+    justify-content: flex-end;
+
+    @media (max-width: $width-sm){
+      display: block;
+    }
+  }
+
+  .fc-unthemed{
+    td{
+      border-color: $light-gray;
+      text-align: left;
+      color: $gray;
+      font-size: 13px;
+      font-weight: 600;
+
+      &.fc-today{
+        background-color: $light-gray;
+      }
+    }
+
+    th{
+      border-color: $light-gray;
+      color: $gray;
+      font-size: 15px;
+      font-weight: 400;
+      padding: 15px 10px;
+    }
+  }
+
+  .fc-event{
+    border-radius: 20px;
+    background-color: #e0e0e0;
+    border-color: #e0e0e0;
+    padding: 4px 20px;
+    color: $black;
+    cursor: pointer;
+
+    &.confirmed{
+      background-color: $black;
+      border-color: $black;
+      color: $white;
+
+      .fc-content{
+        &:after{
+          content: 'Confirmed';
+        }
+      }
+    }
+
+    &.not-confirmed{
+      background-color: #9b9b9b;
+      border-color: #9b9b9b;
+      color: $white;
+      pointer-events: none;
+
+      .fc-content{
+        &:after{
+          content: 'Not confirmed';
+        }
+      }
+    }
+
+    .fc-content{
+      display: flex;
+      justify-content: flex-start;
+
+      span{
+        margin-right: 2px;
+      }
+
+      &:after{
+        opacity: 0.47;
+        margin: 0 0 0 auto;
+      }
+    }
+  }
+
+  .fc-day{
+    cursor: pointer;
+
+    &:hover{
+      background-color: $light-gray;
+    }
+  }
+
+  .fc-day-number{
+
+  }
+
+  .fc-ltr .fc-dayGrid-view .fc-day-top .fc-day-number{
+    float: none;
+    padding: 15px;
+    display: block;
+  }
+
+  .v-select{
+    width: 130px;
+    margin-left: 8px;
+
+    @media (max-width: $width-sm){
+      margin: 5px 0;
+      width: 240px;
+    }
+
+    &.lg{
+      width: 230px;
+
+      @media (max-width: $width-sm){
+        width: 240px;
+      }
+    }
+  }
+
+  .btn{
+    margin-right: 17px;
+  }
+}
+
+.vdpCell{
+  padding: 0!important;
+}

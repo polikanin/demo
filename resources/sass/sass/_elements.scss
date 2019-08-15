@@ -1,0 +1,298 @@
+.btn{
+    width: 150px;
+    height: 42px;
+    background-color: $black;
+    color: $white;
+    display: flex;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    transition: $tr-default;
+    position: relative;
+    z-index: 1;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+    padding: 1px 6px;
+
+    a{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &:hover{
+        background-color: $light-gray;
+        color: $black;
+    }
+
+    &.gray{
+        background-color: $light-gray;
+        color: $black;
+
+        &:hover{
+            background-color: $black;
+            color: $white;
+        }
+    }
+
+    &.filter{
+        color: $gray;
+        font-weight: 400;
+        border: 1px solid $light-gray;
+        background-color: transparent;
+        text-align: left;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 140px;
+        height: 45px;
+
+        &:after{
+            content: '';
+            display: block;
+            border-style: solid;
+            border-width: 1px 1px 0 0;
+            border-color: $gray;
+            height: 6px;
+            width: 6px;
+            transform: rotate(135deg);
+            top: -3px;
+            position: relative;
+        }
+    }
+}
+
+.input{
+    display: block;
+    width: 100%;
+    height: 45px;
+    border: 1px solid $light-gray;
+    background-color: $white;
+    margin: 6px auto;
+    padding: 0 15px;
+    transition: $tr-default;
+    @extend .text;
+
+    @media(max-width: $width-sm){
+        padding: 0 10px;
+    }
+
+    &:focus{
+        color: $black;
+    }
+
+    &_text{
+        @extend .input;
+        height: 150px;
+        padding: 10px 20px;
+        resize: none;
+
+        @media(max-width: $width-sm){
+            padding: 10px;
+        }
+    }
+
+    &_image{
+        width: 100%;
+        max-width: 324px;
+        height: 198px;
+        border: 1px solid $light-gray;
+        background-color: $white;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px 15px;
+        color: $gray;
+        font-size: 13px;
+        font-weight: 400;
+        text-align: center;
+        cursor: pointer;
+
+        img{
+            display: block;
+            margin: 15px auto 0 auto;
+        }
+
+        input{
+            display: none;
+        }
+    }
+}
+
+.date-picker{
+    display: block;
+    width: 100%;
+    height: 45px;
+    border: 1px solid $light-gray;
+    background-color: $white;
+    margin: 6px auto;
+    //padding: 0 20px;
+    transition: $tr-default;
+
+    input{
+        width: 100%;
+        height: 100%;
+        color: $gray;
+        font-size: 13px;
+        font-weight: 400;
+        margin: 0;
+        transition: $tr-default;
+        padding: 0 30px 0 15px;
+
+        &:focus{
+            color: $black;
+        }
+    }
+
+    .vdpClearInput{
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        position: absolute;
+        top: calc(50% - 5px);
+        right: 15px;
+        z-index: 10;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url('../images/icons/icon-cross.svg');
+        background-size: contain;
+
+        &:before{
+            display: none;
+        }
+    }
+
+    @media(max-width: $width-sm){
+        padding: 0 10px;
+    }
+
+    &:focus{
+        color: $black;
+    }
+}
+
+.vdpFloating .vdpInnerWrap{
+    max-width: 100%!important;
+}
+
+.v-select{
+    display: block;
+    width: 100%;
+    height: 42px;
+    border: 1px solid $light-gray;
+    background-color: $white;
+    transition: $tr-default;
+    margin: 0;
+    position: relative;
+    padding: 0;
+
+    .dropdown-toggle{
+        border: none!important;
+        width: 100%;
+        height: 100%;
+        background-image: none;
+        @extend .text;
+    }
+
+    .dropdown-menu{
+        width: calc(100% + 2px)!important;
+        max-width: calc(100% + 2px)!important;
+        min-width: 0!important;
+        box-shadow: none!important;
+        border-radius: 0!important;
+        border: 1px solid $light-gray!important;
+        border-top: none!important;
+        left: -1px!important;
+
+        & > li > a{
+            padding: 5px 20px;
+            color: $gray;
+            font-size: 13px;
+            font-weight: 400;
+        }
+    }
+
+    .open-indicator:before{
+        border-width: 1px 1px 0 0!important;
+        border-color: $light-gray!important;
+        height: 8px!important;
+        width: 8px!important;
+    }
+
+    .vs__selected-options{
+        padding: 0!important;
+    }
+
+    .form-control{
+        color: $gray!important;
+    }
+
+    .form-control,
+    .selected-tag{
+        width: 100%;
+        height: 100%;
+        margin: 0!important;
+        padding: 0 20px!important;
+    }
+
+    //padding: 5px 20px;
+    //color: $gray;
+    //font-size: 13px;
+    //font-weight: 400;
+}
+
+.search{
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+
+    @media(max-width: $width-sm){
+        max-width: 350px;
+    }
+
+    .input{
+        width: calc(100% - 140px);
+        margin: 0;
+    }
+
+    .btn{
+        width: 140px;
+        height: auto;
+    }
+}
+
+.v-msg-container{
+    color: $black;
+
+    .close{
+        width: 20px;
+        height: 20px;
+        background-image: url("../images/icons/icon-cross_black.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin: 0 0 0 auto;
+        display: block;
+
+        span{
+            display: none;
+        }
+    }
+
+    .v-msg-bottom{
+        display: flex;
+        justify-content: space-between;
+
+        .btn{
+            width: 49%;
+        }
+    }
+}

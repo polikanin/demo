@@ -1,0 +1,168 @@
+.notification{
+  background-color: $white;
+  padding: 15px;
+  position: absolute;
+  right: $offset;
+  top: 100%;
+  z-index: 500;
+  width: 400px;
+
+  @media (max-width: $width-fb){
+    padding: 10px;
+    right: 10px;
+    width: 300px;
+  }
+
+  &:before{
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    right: 45px;
+    border: 9px solid transparent;
+    border-bottom-color: $white;
+
+    @media (max-width: $width-md){
+      right: 98px;
+    }
+
+    @media (max-width: $width-fb){
+      right: 108px;
+    }
+  }
+
+  &__wrapper{
+    position: absolute;
+    right: 0;
+    top: calc(100% + 20px);
+    z-index: -1;
+    width: 100%;
+  }
+
+  &__layout{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-color: $black;
+    opacity: 0.75;
+  }
+
+  &__group{
+    margin-top: 25px;
+  }
+
+  &__item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid $light-gray;
+
+    &:nth-of-type(1){
+      margin-top: 10px;
+      border-top: 1px solid $light-gray;
+    }
+
+    &-col{
+      width: 49%;
+
+      &.split{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .btn{
+          width: 49%;
+        }
+      }
+    }
+
+    .btn{
+      width: 100%;
+    }
+  }
+
+  &__text{
+    padding: 20px 0;
+  }
+
+  &__total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid $light-gray;
+    padding: 14px 0 5px 0;
+  }
+}
+
+
+
+
+
+.payment{
+  width: 100%;
+  max-width: 410px;
+  margin: 70px auto 0 auto;
+
+  &-row{
+    margin-bottom: 45px;
+
+    .title-mini_internal{
+      margin-bottom: 14px;
+    }
+  }
+
+  &-container{
+    .title-mini_internal{
+      margin-bottom: -20px;
+    }
+  }
+
+  &__list{
+    border: 1px solid $light-gray;
+    padding: 0 15px;
+
+    &-total{
+      text-align: right;
+      padding: 10px 15px 0 0;
+      @extend .text;
+
+      span{
+        color: $black;
+      }
+    }
+
+    &-item{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-top: 1px solid $light-gray;
+
+      &:nth-of-type(1){
+        border-top: none;
+      }
+
+      &__date{
+        color: $light-gray;
+        font-size: 11px;
+        font-weight: 400;
+      }
+
+      .title-mini_internal{
+        font-weight: 400;
+        margin: 0;
+      }
+
+      &__left{
+
+      }
+
+      &__right{
+
+      }
+    }
+  }
+}
